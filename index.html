@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>प्रपत्र - शिक्षक द्वारा प्रतिदिन प्राचार्य को प्रस्तुत किया जाने वाला प्रपत्र - संलग्नक 4</title>
+		<style>
+			body {
+				font-family: monospace;
+			}
+			.likitm {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>प्रपत्र - शिक्षक द्वारा प्रतिदिन प्राचार्य को प्रस्तुत किया जाने वाला प्रपत्र - संलग्नक 4</h1>
+		1.&nbsp;&nbsp;जिला - <span class = "likitm">दतिया</span><p>
+		2.&nbsp;&nbsp;शाला का नाम - <span class = "likitm">शासकीय महारानी लक्ष्मीबाई कन्या उत्तर माध्यमिक विद्यालय दतिया</span><p>
+		3.&nbsp;&nbsp;यूडाइस - <span class = "likitm">23050110812</span><p>
+		4.&nbsp;&nbsp;शिक्षक का नाम - <span class = "likitm">शंकर सिंह राजपूत</span><p>
+		5.&nbsp;&nbsp;यूनिक आईडी - <span class = "likitm">AI4869</span><p>
+		6.&nbsp;&nbsp;आवंटित विद्यार्थियों की संख्या - <span class = "likitm">30</span><p>
+		7.&nbsp;&nbsp;आज कितने विद्यार्थियों को फोन लगाया - <input type="number"><p>
+		8.&nbsp;&nbsp;कितने विद्यार्थियों से बात हुई - <input type="number"><p>
+		9.&nbsp;&nbsp;कितने विद्यार्थियों के अभिभावकों से बात हुई - <input type="number"><p>
+		10. कितने विद्यार्थियों ने डिजी लेप पर वीडियो देखा - <input type="number"><p>
+		11. कितने विद्यार्थियों ने म॰प्र॰ दूरदर्शन का प्रसारण देखा - <input type="number"><p>
+		12. विद्यार्थियों की संख्या जिन्होंने कुछ भी नहीं देखा - <input type="number"><p>
+		13. हमारा घर हमारा विद्यालय की समयसारणी अनुसार नियमित अध्ययन करने वाले विद्यार्थियों की संख्या - <input type="number"><p>
+		14. क्या आप ऑनलाईन कक्षा ले रहे हैं - हाँ / नहीं <input list="hn"><p>
+		<datalist id = "hn"><option value="हाँ"><option value="नहीं"></datalist>
+		15. यदि हाँ तो सप्ताह में कितने दिन - <input type="number"><p>
+		16. कम से कम 5 विद्यार्थियों के मोबाइल नंबर लिखें जिस पर चर्चा की<br>
+		17. न देखने का कारण - प्रत्येक में संख्या दें - 1. सुविधा नहीं है 2. समय नहीं मिला 3. बीमारी के कारण 4. पारिवारिक समस्या के कारण 5. मन न होने से<br>
+		कृपया संख्या भरते समय सावधानी रखें। एक विद्यार्थी की जानकारी एक ही माध्यम (TV/DigiLEP) में एक ही जगह आनी चाहिए।
+		<table>
+			<tr><th>क्रमांक</th><th>विद्यार्थी का नाम</th><th>माध्यम</th><th>मोबाइल नंबर</th></tr>
+			<tr><td>1.</td><td><input type="text"></td><td><input list = "madymm"></td><td><input type="number"></td></tr>
+			<tr><td>2.</td><td><input type="text"></td><td><input list = "madymm"></td><td><input type="number"></td></tr>
+			<tr><td>3.</td><td><input type="text"></td><td><input list = "madymm"></td><td><input type="number"></td></tr>
+			<tr><td>4.</td><td><input type="text"></td><td><input list = "madymm"></td><td><input type="number"></td></tr>
+			<tr><td>5.</td><td><input type="text"></td><td><input list = "madymm"></td><td><input type="number"></td></tr>
+		</table>
+		<datalist id = "madymm"><option value="TV"><option value="DigiLEP"></datalist>
+		<script src="html2pdf.bundle.min.js"></script>
+		<script type="text/javascript">
+			function sndanm() {
+				var inputs = document.getElementsByTagName("input");
+				var values = [];
+				for(var i = 0; i < inputs.length; i++) {
+					if(inputs[i].value) {
+						var s = document.createElement('span');
+						s.setAttribute("class", "likitm");
+						s.innerHTML = inputs[i].value;
+						inputs[i].parentNode.replaceChild(s, inputs[i]);
+					}
+				}
+				document.getElementById("button").style.display = "None";
+				html2pdf(document.body);
+			}
+		</script>
+		<button onclick="sndanm()" id="button">PDF बनाएँ</button>
+	</body>
+</html>
