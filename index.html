@@ -45,8 +45,7 @@
 		<script src="html2pdf.bundle.min.js"></script>
 		<script type="text/javascript">
 			function sndanm() {
-				var inputs = document.getElementsByTagName("input");
-				var values = [];
+				var inputs = Array.prototype.slice.call(document.getElementsByTagName("input"));
 				for(var i = 0; i < inputs.length; i++) {
 					if(inputs[i].value) {
 						var s = document.createElement('span');
